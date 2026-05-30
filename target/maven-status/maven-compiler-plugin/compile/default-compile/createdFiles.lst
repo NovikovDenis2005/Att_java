@@ -1,0 +1,10 @@
+com\tourplanner\model\Stop$StopType.class
+com\tourplanner\servlet\TourServlet.class
+com\tourplanner\TourPlannerApp.class
+com\tourplanner\server\JettyLauncher.class
+com\tourplanner\dao\DatabaseManager.class
+com\tourplanner\dao\TourDao.class
+com\tourplanner\model\Tour.class
+com\tourplanner\servlet\StopServlet.class
+com\tourplanner\model\Stop.class
+com\tourplanner\dao\StopDao.class

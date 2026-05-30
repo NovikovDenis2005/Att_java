@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планировщик экскурсионных туров</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Tour Planner</h1>
+                <p class="subtitle">Учёт экскурсионных туров и их маршрутов</p>
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="control-panel">
+                <div class="panel-header">
+                    <h2>Туры</h2>
+                    <button class="btn btn-primary" onclick="openTourModal()">
+                        <span class="icon">+</span> Новый тур
+                    </button>
+                </div>
+
+                <div class="filters">
+                    <button class="btn btn-secondary" onclick="loadTours()">Обновить</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table" id="toursTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Код тура</th>
+                                <th>Название</th>
+                                <th>Точек</th>
+                                <th>Дата создания</th>
+                                <th>Действия</th>
+                            </tr>
+                        </thead>
+                        <tbody id="toursTableBody">
+                            <tr>
+                                <td colspan="6" class="empty-message">Загрузка...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="route-details" id="tourDetails" style="display: none;">
+                <div class="panel-header">
+                    <h2>Точки маршрута</h2>
+                    <div class="route-info" id="tourInfo"></div>
+                </div>
+
+                <div class="stations-panel">
+                    <div class="stations-list" id="stopsList">
+                    </div>
+
+                    <button class="btn btn-primary" onclick="openStopModal()">
+                        <span class="icon">+</span> Добавить точку
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="tourModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="tourModalTitle">Новый тур</h3>
+                <button class="close-btn" onclick="closeTourModal()">&times;</button>
+            </div>
+            <form id="tourForm" onsubmit="saveTour(event)">
+                <input type="hidden" id="tourId">
+                <div class="form-group">
+                    <label for="tourCode">Код тура *</label>
+                    <input type="text" id="tourCode" required maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label for="tourTitle">Название тура *</label>
+                    <input type="text" id="tourTitle" required maxlength="100">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeTourModal()">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="stopModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="stopModalTitle">Новая точка</h3>
+                <button class="close-btn" onclick="closeStopModal()">&times;</button>
+            </div>
+            <form id="stopForm" onsubmit="saveStop(event)">
+                <input type="hidden" id="stopId">
+                <input type="hidden" id="currentTourId">
+                <div class="form-group">
+                    <label for="stopPlace">Место *</label>
+                    <input type="text" id="stopPlace" required maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label for="stopType">Тип точки *</label>
+                    <select id="stopType" required>
+                        <option value="">Выберите тип</option>
+                        <option value="start">Старт</option>
+                        <option value="waypoint">Промежуточная</option>
+                        <option value="finish">Финиш</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="arrivalTime">Время прибытия</label>
+                        <input type="time" id="arrivalTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="departureTime">Время убытия</label>
+                        <input type="time" id="departureTime">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="stopPosition">Порядковый номер *</label>
+                    <input type="number" id="stopPosition" required min="1" placeholder="1">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeStopModal()">Отмена</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

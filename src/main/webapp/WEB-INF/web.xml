@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Tour Planner</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>TourServlet</servlet-name>
+        <servlet-class>com.tourplanner.servlet.TourServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TourServlet</servlet-name>
+        <url-pattern>/api/tours/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StopServlet</servlet-name>
+        <servlet-class>com.tourplanner.servlet.StopServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StopServlet</servlet-name>
+        <url-pattern>/api/stops/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

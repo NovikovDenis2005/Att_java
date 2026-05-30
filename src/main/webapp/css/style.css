@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: #0f766e;
+    color: white;
+    padding: 25px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+}
+
+.control-panel,
+.route-details {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.panel-header h2 {
+    font-size: 20px;
+}
+
+.route-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.filters {
+    margin-bottom: 15px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.data-table th {
+    background: #eee;
+}
+
+.empty-message {
+    text-align: center;
+    color: #888;
+    padding: 15px;
+}
+
+.empty-message.error {
+    color: #c00;
+}
+
+.stations-list {
+    margin-bottom: 15px;
+}
+
+.station-card {
+    border: 1px solid #ddd;
+    border-left: 4px solid #999;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.station-card.start {
+    border-left-color: #16a34a;
+}
+
+.station-card.waypoint {
+    border-left-color: #2563eb;
+}
+
+.station-card.finish {
+    border-left-color: #dc2626;
+}
+
+.station-info h4 {
+    margin-bottom: 5px;
+}
+
+.station-meta span {
+    margin-right: 12px;
+    font-size: 13px;
+    color: #555;
+}
+
+.station-type-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+}
+
+.badge-start {
+    background: #16a34a;
+}
+
+.badge-waypoint {
+    background: #2563eb;
+}
+
+.badge-finish {
+    background: #dc2626;
+}
+
+.btn {
+    border: none;
+    border-radius: 4px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #0f766e;
+    color: white;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+.btn-danger {
+    background: #dc2626;
+    color: white;
+}
+
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
+.icon {
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 6px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
